@@ -7,12 +7,9 @@ var basename = path.basename(module.filename);
 var env = process.env.NODE_ENV || "development";
 var config = require(__dirname + "/../config/config.js")[env];
 var db = {};
-console.log(config.use_env_variable);
-console.log("Config ^^^");
-console.log(process.env[config.use_env_variable]);
-if (config.use_env_variable) {
-  
-  var sequelize = new Sequelize(process.env[config.use_env_variable], config);
+
+if (config.use_env_variable) {  
+  var sequelize = new Sequelize(process.env[config.use_env_variable], process.env.MYSQL_USER, process.env.MYSQL_KEY, config);
 } else {
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
