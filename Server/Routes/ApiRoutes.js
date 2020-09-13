@@ -102,6 +102,7 @@ module.exports = function(app) {
         })
         .then( (result) => {
           res.json({data: result});
+          console.log(result);
           res.end();
         })
       }
