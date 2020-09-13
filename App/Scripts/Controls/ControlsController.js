@@ -1,6 +1,7 @@
 fetchData = function(){
     $.get('/api/dataItems/switches', function(req, res){
-        ControlsView.setData(req.data);
+        console.log(req)
+        ControlsView.setData(req.body);
     });  
     setTimeout(fetchData, 1000);
 }
