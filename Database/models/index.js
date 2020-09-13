@@ -12,7 +12,7 @@ console.log("Config ^^^");
 console.log(process.env[config.use_env_variable]);
 if (config.use_env_variable) {
   
-  var sequelize = new Sequelize(process.env.MYSQL_DBNAME, process.env.MYSQL_USER, process.env.MYSQL_KEY, process.env);
+  var sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
