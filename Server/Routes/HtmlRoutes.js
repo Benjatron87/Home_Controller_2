@@ -48,6 +48,7 @@ module.exports = function(app) {
     });
 
     app.get('/NewAccountSuccess', (req, res) => {       
+        console.log(req.session);
         res.sendFile(path.join(__dirname, "../../App/Views/NewAccountSuccess.html"));   
     });
 
