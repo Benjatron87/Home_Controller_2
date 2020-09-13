@@ -107,10 +107,10 @@ module.exports = function(app) {
       }
     });
 
-    app.get("/api/dataItems/arduinoSwitches/", (req, res)=> {
+    app.get("/api/dataItems/arduinoSwitches/:userName", (req, res)=> {
         db.DATAITEM.findAll({ where: 
           {
-            userId: req.session.username,
+            userId: req.params.userName,
             type: 'switch'
           }
         })
