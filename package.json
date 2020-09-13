@@ -15,11 +15,7 @@
   "scripts": {
     "start": "cd server && node server",
     "start:prod": "cd server && node server",
-    "start:dev": "cd server && node server",
-    "client": "cd client && npm run start",
-    "install": "cd server && node server",
-    "build": "cd server && node server",
-    "heroku-postbuild": "cd server && node server"
+    "start:dev": "cd server && node server"
   },
   "repository": {
     "type": "git",
