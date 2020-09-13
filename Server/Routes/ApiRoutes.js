@@ -101,8 +101,7 @@ module.exports = function(app) {
           }
         })
         .then( (result) => {
-          res.json(result);
-          res.end();
+          res.json(result);          
         })
       }
     });
