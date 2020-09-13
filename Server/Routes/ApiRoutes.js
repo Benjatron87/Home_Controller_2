@@ -101,10 +101,25 @@ module.exports = function(app) {
           }
         })
         .then( (result) => {
-          res.json(result);          
+          res.json(result);       
+          res.end();   
         })
       }
     });
+
+    app.get("/api/dataItems/arduinoSwitches/", (req, res)=> {
+        db.DATAITEM.findAll({ where: 
+          {
+            userId: req.session.username,
+            type: 'switch'
+          }
+        })
+        .then( (result) => {
+          res.json(result);          
+          res.end();
+        })      
+    });
+
 
     app.post("/api/dataItems/:id", (req, res)=> {
       if(req.session.loggedin){
