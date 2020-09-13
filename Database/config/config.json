@@ -1,0 +1,30 @@
+{
+  "development": {
+    "username": "root",
+    "password": "superman",
+    "database": "home_control",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql",
+    "logging": false,
+    "dialectOptions": {
+      "multipleStatements": true
+    }
+  },
+  "test": {
+    "username": "root",
+    "password": "superman",
+    "database": "home_control",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql",
+    "logging": false,
+    "dialectOptions": {
+      "multipleStatements": true
+    }
+  },
+  "production": {
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
+  }
+}

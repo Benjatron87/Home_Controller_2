@@ -1,0 +1,85 @@
+.login-form {
+    width: 40vw;
+    margin: 0 auto;
+}
+.login-form h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 3vw;
+    padding: 20px 0 20px 0;
+}
+.login-form h2 {
+    color: #ffffff;
+    font-size: 1vw;
+}
+.login-form input[type="password"],
+.login-form input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dddddd;
+    margin-bottom: 15px;
+    box-sizing:border-box;
+}
+.login-form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #535b63;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+}
+#ErrMsg{
+    color: red;
+    text-decoration: none;
+}
+#CreateNewAccount{
+    color: rgb(153, 153, 153);
+    margin-top: 10px;
+    cursor: pointer;
+}
+#CreateNewAccount:hover{
+    color: white;
+}
+#ReturnToLogin{
+    color: rgb(153, 153, 153);
+    cursor: pointer;
+}
+#ReturnToLogin:hover{
+    color: white;
+}
+
+@media screen and (max-width: 800px) {
+    .login-form {
+        width: 70vw;
+        margin: 0 auto;
+    }
+    .login-form h1 {
+        text-align: center;
+        color: #ffffff;
+        font-size: 6vw;
+        padding: 20px 0 20px 0;
+    }
+    .login-form h2 {
+        color: #ffffff;
+        font-size: 4vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .login-form {
+        width: 90vw;
+        margin: 0 auto;
+    }
+    .login-form h1 {
+        text-align: center;
+        color: #ffffff;
+        font-size: 7vw;
+        padding: 20px 0 20px 0;
+    }
+    .login-form h2 {
+        color: #ffffff;
+        font-size: 4vw;
+    }
+}

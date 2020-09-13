@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">       
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../Styles/Shared.css">
+        <link rel="stylesheet" href="../Styles/DataItem.css">
+
+        <title>Home Controller</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Menu</h3>
+                </div>
+
+                <ul class="list-unstyled components">                    
+                    <li>
+                        <a href="/Home">Home</a>                        
+                    </li>
+                    <li>
+                        <a href="/Controls">Controls</a>
+                    </li>
+                    <li>
+                        <a href="/Data">Data</a>
+                    </li>
+                    <li>
+                        <a href="/Settings">Settings</a>
+                    </li>
+                    <li>
+                        <a href="/Logout">Logout</a>
+                    </li>
+                </ul>              
+            </nav>
+            <div id="navbar">
+                <nav class="navbar">                                         
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>                              
+                </nav>                             
+            </div>      
+            <div id="content" class="container-fluid">                                     
+                <legend class="page-title">Controls</legend>   
+                <div id="dataItemContainer"></div>
+                <a id="addButton" class="add-button hover">
+                    new +   
+                </a>  
+            </div>        
+        </div>
+        <div id="NewItemModal" class="modal" data-val="switch">
+            <div class="modal-content">
+               <legend class="modal-title">New Switch Item<span class="closeModal">&times;</span></legend>               
+              <form>
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Title:  <i id="TitleValidation" style="display:none;">Required</i></label>
+                  <input type="text" class="form-control" id="Title" placeholder="title...">
+                </div>
+              </form>              
+                <div id="saveButton">Save</div>
+            </div>          
+        </div>
+        <div id="ConfirmationModal" class="modal">
+            <div class="modal-content">
+               <legend id="Confirmation-modal-title">Confirmation<span class="closeConfirmation">&times;</span></legend>               
+                <span id="ConfirmationModalMsg"></span>   
+                <div id="button-container">
+                    <span id="continueButton" class="modal-button">OK</span>
+                    <span id="cancelButton" class="modal-button">Cancel</span>
+                </div>                     
+            </div>          
+        </div>
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="../Scripts/Shared/Menu.js"></script> 
+        <script src="../Scripts/Controls/ControlsController.js"></script>     
+        <script src="../Scripts/Controls/ControlsView.js"></script>          
+        <script src="../Scripts/Shared/CreateDataItemModal.js"></script>         
+        <script src="../Scripts/Shared/ConfirmationModal.js"></script>  
+        <script src="../Scripts/Shared/DataItem.js"></script>      
+    </body>
+</html>
