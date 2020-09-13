@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const DataItems = sequelize.define("DATAITEM", {
+    const DataItem = sequelize.define("DATAITEM", {
       type: {
         type: String
       },
@@ -20,8 +20,8 @@ module.exports = (sequelize, DataTypes) => {
       },
       updatedAt:{
         type: Date
-    }
-
+      },
+      freezeTableName: true
     });
-    return DataItems;
+    return DataItem;
   };
