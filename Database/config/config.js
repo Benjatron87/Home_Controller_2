@@ -17,7 +17,7 @@ module.exports = {
     "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql",
     "dialectOptions": {
-      "ssl": true
+      "ssl": "Amazon RDS"
     },
     "username": process.env.MYSQL_USER,
     "password": process.env.MYSQL_KEY,
