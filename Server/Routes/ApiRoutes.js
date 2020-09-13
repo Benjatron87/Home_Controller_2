@@ -6,8 +6,8 @@ module.exports = function(app) {
         var username = req.body.username;
         var password = req.body.password;        
         if (username && password) {
-          console.log(db);
-          db.USERS.findOne({ where: 
+          console.log(db.USER);
+          db.USER.findOne({ where: 
             {
             userName: username,
             password: password
@@ -46,7 +46,7 @@ module.exports = function(app) {
         res.end();
       }
       else{
-        db.USERS.build({
+        db.USER.build({
           userName: req.body.username,
           firstName: req.body.firstName,
           lastName: req.body.lastName,          
@@ -79,7 +79,7 @@ module.exports = function(app) {
 
     app.get("/api/dataItems/values", (req, res)=> {
       if(req.session.loggedin){
-        db.DATAITEMS.findAll({ where: 
+        db.DATAITEM.findAll({ where: 
           {
             userId: req.session.username,
             type: 'text'
@@ -94,7 +94,7 @@ module.exports = function(app) {
 
     app.get("/api/dataItems/switches", (req, res)=> {
       if(req.session.loggedin){
-        db.DATAITEMS.findAll({ where: 
+        db.DATAITEM.findAll({ where: 
           {
             userId: req.session.username,
             type: 'switch'
@@ -109,7 +109,7 @@ module.exports = function(app) {
 
     app.post("/api/dataItems/:id", (req, res)=> {
       if(req.session.loggedin){
-        db.DATAITEMS.findOne({ where: 
+        db.DATAITEM.findOne({ where: 
           {
           id: req.params.id
           }
@@ -126,7 +126,7 @@ module.exports = function(app) {
     app.post("/api/saveDataItem", (req, res)=> {     
       if(req.session.loggedin){ 
         var data = req.body.dataItem;
-        db.DATAITEMS.build({ 
+        db.DATAITEM.build({ 
           title: data.title, 
           unit: data.units, 
           type: data.type,
@@ -148,7 +148,7 @@ module.exports = function(app) {
 
     app.post("/api/dataItems/deleteRow/:id", (req, res)=> {
       if(req.session.loggedin){
-        db.DATAITEMS.destroy({ where: 
+        db.DATAITEM.destroy({ where: 
           {
           id: req.params.id,
           userId: req.session.username
