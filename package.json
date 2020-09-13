@@ -13,9 +13,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "cd server && node server",
-    "start:prod": "cd server && node server",
-    "start:dev": "cd server && node server"
+    "start": "node server",
+    "start:prod": "node server",
+    "start:dev": "node server"
   },
   "repository": {
     "type": "git",
