@@ -4,15 +4,17 @@ module.exports = function(app) {
 
     app.post('/Login', function(req, res) {      
         var username = req.body.username;
-        var password = req.body.password;
+        var password = req.body.password;        
         if (username && password) {
+          console.log("Getting stuck here?");
           db.USERS.findOne({ where: 
             {
             userName: username,
             password: password
             }
           }).then((results) => {
-            if (results && results.dataValues) {              
+            if (results && results.dataValues) {        
+              console.log(req.session);      
               req.session.loggedin = true;
               req.session.username = username;
               req.session.currentUser = results
@@ -32,7 +34,8 @@ module.exports = function(app) {
     app.post('/CreateNewLogin', function(req, res) {      
       var data = req.body;
 
-
+    
+      console.log(data);      
 
       if(!data.username || !data.firstName || !data.lastName || !data.password || !data.confirmPassword){
         res.json({ errMsg: 'All fields must be filled in!' });
