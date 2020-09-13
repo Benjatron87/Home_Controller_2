@@ -6,7 +6,7 @@ module.exports = function(app) {
         var username = req.body.username;
         var password = req.body.password;        
         if (username && password) {
-          console.log("Getting stuck here?");
+          console.log(db);
           db.USERS.findOne({ where: 
             {
             userName: username,
