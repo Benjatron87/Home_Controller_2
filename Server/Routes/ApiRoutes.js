@@ -26,7 +26,7 @@ module.exports = function(app) {
           });
         }
         else {
-          res.json({errMsg: 'Please enter Username and Password!'});
+          res.json({ errMsg: 'Please enter Username and Password!' });
           res.end();
         }    
     });
