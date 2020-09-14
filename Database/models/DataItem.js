@@ -20,6 +20,9 @@ module.exports = (sequelize, DataTypes) => {
       },
       updatedAt:{
         type: Date
+      },
+      pin:{
+        type: Number
       }
     }, {     
       freezeTableName: true,

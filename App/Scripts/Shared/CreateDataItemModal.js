@@ -25,7 +25,8 @@ class CreateDataItemModal{
         $('#saveButton').on('click', function(){ 
             var saveObj = {
                 title: $('#Title').val(),
-                units: $('#Units').val()
+                units: $('#Units').val(),
+                pin: parseInt($('#PinNumber').val())
             }
             self.validate(saveObj);
         });
@@ -56,13 +57,19 @@ class CreateDataItemModal{
         else if(saveObj.title != ""){
             $('#TitleValidation').hide();
         }
+        if(saveObj.pin == "" && this.type == 'switch'){
+            $('#PinValidation').show();
+        }
+        else if(saveObj.title != ""){
+            $('#PinValidation').hide();
+        }
         if(saveObj.units == "" && this.type == 'text'){
             $('#UnitsValidation').show();
         }
         else if(saveObj.units != ""){
             $('#UnitsValidation').hide();
         }
-        if(saveObj.title != "" && (saveObj.units != "" || this.type !== 'text')){
+        if(saveObj.title != "" && (saveObj.units != "" || this.type != 'text') && (saveObj.pin != "" || this.type != 'switch')){
             saveObj.type = this.type;
             location.reload();
             this.save(saveObj);                

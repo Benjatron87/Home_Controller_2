@@ -5,16 +5,15 @@ module.exports = function(app) {
     app.post('/Login', function(req, res) {      
         var username = req.body.username;
         var password = req.body.password;        
-        if (username && password) {
-          console.log(db.USER);
+        if (username && password) {   
           db.USER.findOne({ where: 
             {
             userName: username,
             password: password
             }
           }).then((results) => {
-            if (results && results.dataValues) {        
-              console.log(req.session);      
+            if (results && results.dataValues) {    
+              //req.session.loggedin = true;
               req.session.loggedin = true;
               req.session.username = username;
               req.session.currentUser = results
@@ -33,9 +32,6 @@ module.exports = function(app) {
 
     app.post('/CreateNewLogin', function(req, res) {      
       var data = req.body;
-
-    
-      console.log(data);      
 
       if(!data.username || !data.firstName || !data.lastName || !data.password || !data.confirmPassword){
         res.json({ errMsg: 'All fields must be filled in!' });
@@ -93,6 +89,7 @@ module.exports = function(app) {
     });
 
     app.get("/api/dataItems/switches", (req, res)=> {
+      console.log(req.session.username);
       if(req.session.loggedin){
         db.DATAITEM.findAll({ where: 
           {
@@ -121,7 +118,7 @@ module.exports = function(app) {
     });
 
 
-    app.post("/api/dataItems/:id", (req, res)=> {
+    app.post("/api/dataItems/:id", (req, res)=> {      
       if(req.session.loggedin){
         db.DATAITEM.findOne({ where: 
           {
@@ -144,7 +141,8 @@ module.exports = function(app) {
           title: data.title, 
           unit: data.units, 
           type: data.type,
-          userId: req.session.username
+          userId: req.session.username,
+          pin: data.pin
         })
         .save()
         .then(anotherTask => {

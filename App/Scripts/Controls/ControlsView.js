@@ -19,7 +19,7 @@ var ControlsView = {
         $("#dataItemList").append(`
             <li class="dataItem hover">
                 <a class="dataItemTitle">
-                    (${val.id})${val.title}:
+                    (${val.pin}) ${val.title}:
                 </a>
                 <span id="${val.id}" class="deleteRow">&times;</span>
                 <button id="${val.id}" class="dataItemButton ${state} hover">
