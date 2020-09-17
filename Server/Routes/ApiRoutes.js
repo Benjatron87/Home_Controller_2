@@ -112,7 +112,12 @@ module.exports = function(app) {
           }
         })
         .then( (result) => {
-          res.json(result);          
+          var filtered;
+          for(let i = 0; i < result.length; i++)
+          {
+            filtered.push({pin: result[i].pin, value: result[i].value});
+          }
+          res.json(filtered);          
           res.end();
         })      
     });
