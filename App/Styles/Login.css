@@ -1,6 +1,7 @@
 .login-form {
     width: 40vw;
     margin: 0 auto;
+    height: 100vh;
 }
 .login-form h1 {
     text-align: center;
