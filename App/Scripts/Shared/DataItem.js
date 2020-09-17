@@ -18,6 +18,17 @@ $('#addButton').on('click', function(){
 
 $(document).on('click', '.dataItemButton', function(){    
     var state = $(this).hasClass('On');
+    if (state || state === 'true'){
+        $(this).addClass('Off');
+        $(this).removeClass('On');
+        $(this).html('Off');
+    }
+    else{
+        $(this).addClass('On');
+        $(this).removeClass('Off');
+        $(this).html('On');
+    }
+
     $.post('api/dataItems/' + this.id, { value: state }, function(req, res){
         console.log(res);
     });

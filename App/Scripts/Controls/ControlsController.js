@@ -3,7 +3,7 @@ fetchData = function(){
         console.log(req)
         ControlsView.setData(req);
     });  
-    setTimeout(fetchData, 1000);
+    setTimeout(fetchData, 10000);
 }
  
 fetchData();

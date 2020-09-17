@@ -50,26 +50,38 @@ class CreateDataItemModal{
         $('#TitleValidation').hide();
     }
 
-    validate(saveObj){               
+    validate(saveObj){          
+        var valid = true;
+
         if(saveObj.title == ""){
             $('#TitleValidation').show();
+            valid = false;
         }
         else if(saveObj.title != ""){
             $('#TitleValidation').hide();
         }
+        if (saveObj.title.length > 45){
+            $('#TitleValidation').html('Value Too Long').show();
+            valid = false;
+        }
+        else {
+            $('#TitleValidation').hide().html('Required');
+        }        
         if(saveObj.pin == "" && this.type == 'switch'){
             $('#PinValidation').show();
+            valid = false;
         }
         else if(saveObj.title != ""){
             $('#PinValidation').hide();
         }
         if(saveObj.units == "" && this.type == 'text'){
             $('#UnitsValidation').show();
+            valid = false;
         }
         else if(saveObj.units != ""){
             $('#UnitsValidation').hide();
         }
-        if(saveObj.title != "" && (saveObj.units != "" || this.type != 'text') && (saveObj.pin != "" || this.type != 'switch')){
+        if(valid){
             saveObj.type = this.type;
             location.reload();
             this.save(saveObj);                
