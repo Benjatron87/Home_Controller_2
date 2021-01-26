@@ -176,7 +176,7 @@ ul.CTAs a {
     padding: 2vw;
     min-height: 100vh;
     transition: all 0.3s;
-    background-image: linear-gradient(black, navy);
+    background-image: linear-gradient(black, rgb(0, 0, 116));
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -451,8 +451,11 @@ ul.CTAs a {
     padding: 5px;
 }
 .p-3{
-    padding: 7px;
+    padding: 15px;
 }
 .p-4{
-    padding: 10px;
+    padding: 20px;
+}
+.p-5{
+    padding: 25px;
 }

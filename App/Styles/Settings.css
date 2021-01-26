@@ -1,0 +1,23 @@
+#UserDataList{
+    width: 50%;
+    margin-left: 25%;
+}
+
+#UserDataList li label{
+    color: white;
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 800px) {
+    #UserDataList{
+        width: 75%;
+        margin-left: 12.5%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #UserDataList{
+        width: 100%;
+        margin-left: 0%;
+    }
+}

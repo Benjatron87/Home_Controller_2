@@ -12,10 +12,12 @@ var DataView = {
     },
 
     creatDataItem: function(val){        
+        var title = val.title.length > 12 ? val.title.slice(0,12).trim() + '... ' : val.title;
+        
         $("#dataItemList").append(`
             <li class="dataItem hover">
                 <a class="dataItemTitle">
-                (${val.id})${val.title}:
+                    (${val.pin}) ${title}
                 </a>
                 <span id="${val.id}" class="deleteRow">&times;</span>
                 <a class="dataItemVal">

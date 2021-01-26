@@ -139,6 +139,26 @@ module.exports = function(app) {
       }
     });   
 
+    app.post("/api/updateData/:userName", (req, res)=> {    
+      console.log(req.body.data);  
+      var data = req.body.data;   
+      for(let i = 0; i < data.length; i++){
+          db.DATAITEM.findOne({ where: 
+            {
+            pin: data[i].pin,
+            userId: req.params.userName
+            }
+          })
+          .then(val => {
+            console.log(val);
+            val.update({
+              value: data[i].value
+            });            
+          });
+      }
+      res.end();    
+    });   
+
     app.post("/api/saveDataItem", (req, res)=> {     
       if(req.session.loggedin){ 
         var data = req.body.dataItem;

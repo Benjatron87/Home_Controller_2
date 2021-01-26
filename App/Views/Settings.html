@@ -48,14 +48,27 @@
             <div id="content" class="row d-flex justify-content-center">       
                 <legend class="page-title">Settings</legend>              
                 <div class="col-6" id="dataItemContainer">
-                    <ul id="dataItemList"></ul>
+                    <ul id="UserDataList">
+                        <li>
+                            <label for="FirstName">First Name:</label>
+                            <input type="text" class="form-control" id="FirstName">
+                        </li>
+                        <li>
+                            <label for="LastName">Last Name:</label>
+                            <input type="text" class="form-control" id="LastName">
+                        </li>
+                        <li>
+                            <label for="UserName">User Name:</label>
+                            <input type="text" class="form-control" id="UserName">
+                        </li>
+                    </ul>
                 </div>
             </div>            
         </div>
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="../Scripts/Shared/Menu.js"></script> 
-        <script src="../Scripts/Settings/SettingsController.js"></script>     
-        <script src="../Scripts/Settings/SettingsView.js"></script>            
+        <script src="../Scripts/Settings/SettingsView.js"></script>    
+        <script src="../Scripts/Settings/SettingsController.js"></script>             
     </body>
 </html>
