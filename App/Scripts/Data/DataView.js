@@ -13,17 +13,25 @@ var DataView = {
 
     creatDataItem: function(val){        
         var title = val.title.length > 12 ? val.title.slice(0,12).trim() + '... ' : val.title;
-        
+        var updated = moment(val.updatedAt).format("DD/MM hh:mm a") ;
+
         $("#dataItemList").append(`
-            <li class="dataItem hover">
-                <a class="dataItemTitle">
-                    (${val.pin}) ${title}
-                </a>
-                <span id="${val.id}" class="deleteRow">&times;</span>
-                <a class="dataItemVal">
-                    ${val.value} ${val.unit}
-                </a>               
-            </li>`
+            <div class="dataItem">
+                <li>                
+                    <a class="dataItemTitle">
+                        (${val.pin}) ${title}                    
+                    </a>
+                    <span id="${val.id}" class="deleteRow">&times;</span>
+                    <a class="dataItemVal">
+                        ${val.value} ${val.unit}
+                    </a>                 
+                </li>
+                <li>
+                    <div class="updatedAt">Updated At: ${updated}</div>
+                </li>
+            </div>`
+
+            
         );        
     }
 }

@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
-        if($('body').width() < 600 && $('#sidebar').hasClass('active')){
+        if($('body').width() < 800 && $('#sidebar').hasClass('active')){
             $('#content').toggleClass('hidden');
         }
         else{

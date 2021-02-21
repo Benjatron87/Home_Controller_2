@@ -9,10 +9,16 @@
     float: right;    
 }
 
+.updatedAt{
+    font-size: 2vw;
+    float: left;
+    margin-left: 6vw;
+}
+
 .dataItem{
     border: 2px solid navy;
     margin: 2vw; 
-    padding: 2vw;
+    padding: 3vw;
     border-radius: 2vw;
 }
 
