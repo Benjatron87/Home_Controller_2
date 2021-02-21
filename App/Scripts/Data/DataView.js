@@ -13,7 +13,7 @@ var DataView = {
 
     creatDataItem: function(val){        
         var title = val.title.length > 12 ? val.title.slice(0,12).trim() + '... ' : val.title;
-        var updated = moment(val.updatedAt).format("DD/MM hh:mm a") ;
+        var updated = moment(val.updatedAt).format("DD MMM hh:mm a") ;
 
         $("#dataItemList").append(`
             <div class="dataItem">
